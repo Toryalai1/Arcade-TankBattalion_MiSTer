@@ -76,6 +76,7 @@ set_global_assignment -name VERILOG_FILE rtl/clock.v
 set_global_assignment -name VERILOG_FILE rtl/cpu.v
 set_global_assignment -name VERILOG_FILE rtl/ttl_chips.v
 set_global_assignment -name VERILOG_FILE rtl/Tankb_fpga.v
+set_global_assignment -name VHDL_FILE rtl/EngineSound.vhd
 set_global_assignment -name SYSTEMVERILOG_FILE "Arcade-TankBattalion.sv"
 set_global_assignment -name SIGNALTAP_FILE output_files/stp1.stp
 set_global_assignment -name SIGNALTAP_FILE output_files/stp2.stp

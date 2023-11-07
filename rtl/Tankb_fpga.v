@@ -648,6 +648,13 @@ wire [15:0] wav3_amp;
 		.RESET_n(RESET_n),
 		.sound_out(wav2_amp)
 	);
+
+	EngineSound EngineSound(	
+		.Clk_6(CLK_6M),
+		.Reset(motor_on),
+		.highrpm(motor_hi),
+		.Motor(wav3_amp[14:9])
+	);
 	
 // Audio mixer
 // -----------
