@@ -579,7 +579,7 @@ module ls259
   	output reg [7:0] Q
 );
 
-    always @ (nE,nC,D)
+    always @ (nE,nC,D,A)
         begin
           if (!nC && nE) begin
             Q[7:0] <= 8'b00000000;

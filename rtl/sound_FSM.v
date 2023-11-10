@@ -26,7 +26,7 @@ reg [15:0] wave_rom_addr;
 wire [7:0] wave_rom_data_out;
 reg [15:0] wave_rom_length = wav_length;
 
-spram #(16,8,init_file) wave_rom
+spram #(14,8,init_file) wave_rom
 (
 	.clk(clk),
 	.address(wave_rom_addr),

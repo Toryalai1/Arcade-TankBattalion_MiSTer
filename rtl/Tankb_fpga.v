@@ -659,7 +659,7 @@ wire [15:0] wav3_amp;
 // Audio mixer
 // -----------
 // - Combine discrete audio circuit and wave output, then invert
-wire signed [15:0] sound_combined = 16'hFFFF - (wav1_amp + wav2_amp);
+wire signed [15:0] sound_combined = 16'hFFFF - (wav1_amp + wav2_amp + wav3_amp);
 assign audio_l = sound_combined; //can just use sound combined if no pause
 assign audio_r = audio_l; //right audio = left audio, mono not stereo
 	
