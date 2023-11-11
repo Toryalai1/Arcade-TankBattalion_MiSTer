@@ -13,8 +13,7 @@ module Tankb_fpga(
 	input [13:0] dn_addr,
 	input 		 dn_wr,
 	input [7:0]  dn_data,
-	output signed [15:0] audio_l,
-	output signed [15:0] audio_r	
+	output signed [15:0] audio
 );
 
 wire nRESET = (nRESET_PO & RESET_n);
@@ -660,8 +659,7 @@ wire [15:0] wav3_amp;
 // -----------
 // - Combine discrete audio circuit and wave output, then invert
 wire signed [15:0] sound_combined = 16'hFFFF - (wav1_amp + wav2_amp + wav3_amp);
-assign audio_l = sound_combined; //can just use sound combined if no pause
-assign audio_r = audio_l; //right audio = left audio, mono not stereo
+assign audio = sound_combined; //can just use sound combined if no pause
 	
 //end of sound
 
