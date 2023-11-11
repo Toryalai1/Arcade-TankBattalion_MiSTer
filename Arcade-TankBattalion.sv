@@ -247,6 +247,7 @@ wire        ioctl_wait;
 wire [15:0] joystick_0;
 
 wire [21:0] gamma_bus;
+wire  [5:0] motor;
 
 
 hps_io #(.CONF_STR(CONF_STR)) hps_io
@@ -272,7 +273,9 @@ hps_io #(.CONF_STR(CONF_STR)) hps_io
 	.ioctl_index(ioctl_index),
 	.ioctl_wait(ioctl_wait),
 
-	.joystick_0(joystick_0)
+	.joystick_0(joystick_0),
+
+	.motor(motor)
 );
 
 ///////////////////   CONTROLS   ////////////////////
@@ -346,7 +349,6 @@ arcade_video #(260,9) arcade_video //288
 wire rom_download = ioctl_download & !ioctl_index;
 wire reset_top = (RESET | status[0] | buttons[1] | rom_download);
 assign LED_USER = rom_download;
-wire  [5:0] motor;
 
 Tankb_fpga tankb (
 	.CLK_18M(CLK_18M),
