@@ -346,6 +346,7 @@ arcade_video #(260,9) arcade_video //288
 wire rom_download = ioctl_download & !ioctl_index;
 wire reset_top = (RESET | status[0] | buttons[1] | rom_download);
 assign LED_USER = rom_download;
+wire  [5:0] motor;
 
 Tankb_fpga tankb (
 	.CLK_18M(CLK_18M),
